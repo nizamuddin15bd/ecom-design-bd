@@ -5,6 +5,7 @@ module.exports = {
     extend: {
        colors: {
         'red-regular': '#E73C17',
+        'background-color':'#F2F4F5',
       },
     },
   },
