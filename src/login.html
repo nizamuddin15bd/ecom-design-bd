@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/styles.css">
+    <link rel="stylesheet" href="signup.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <section
+      class="min-h-screen flex items-center justify-center bg-[url('/images/Background.svg')]"
+    >
+      <!-- login container -->
+      <div
+        class="bg-white rounded-2xl px-12 pb-10 pt-7 max-w-full drop-shadow-2xl"
+      >
+        <div class="flex justify-center items-center">
+          <img class="justify-center" src="../images/logo.svg" width="80px" />
+        </div>
+        <h2 class="font-bold text-2xl text-[#002D74] text-center">Sopne</h2>
+        <p class="text-base mt-1 mb-2 text-center text-black opacity-50 mb-6">
+          Best online E-commerce website for you
+        </p>
+
+        <div class="flex justify-center gap-3 mb-5">
+          <a
+            href="https://www.google.com/"
+            class="bg-white border py-2 px-5 w-50 rounded-xl flex justify-center items-center gap-2 text-sm hover:border-blue-500 hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+          >
+            <img src="../images/google.svg" alt="Google Logo" />
+            Google
+          </a>
+          <a
+            href="https://www.facebook.com/"
+            class="bg-white border py-2 px-5 w-50 rounded-xl flex justify-center items-center gap-2 text-sm hover:border-blue-500 hover:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+          >
+            <img src="../images/facebook.svg" alt="Facebook Logo" />
+            Facebook
+          </a>
+        </div>
+
+        <div class="my-4 flex justify-between items-center text-gray-400 gap-2">
+          <hr class="border-dashed border-black opacity-25 w-40" />
+          <p class="text-center text-sm text-black opacity-60">Or</p>
+          <hr class="border-dashed border-black opacity-25 w-40" />
+        </div>
+
+        <!-- form -->
+        <form action="" class="flex flex-col">
+          <input
+            class="p-2 mb-4 rounded border w-full border border-black/25 placeholder-black/50 focus:ring-blue-500 focus:border-blue-500 outline-none hover:border-blue-500"
+            type="email"
+            name="email"
+            placeholder="Type Your Email"
+            required
+          />
+          <div class="relative">
+            <input
+              class="p-2 rounded border w-full border border-black/25 placeholder-black/50 focus:ring-blue-500 focus:border-blue-500 outline-none mb-0.5 hover:border-blue-500"
+              type="password"
+              name="password"
+              placeholder="Type Your Password"
+              required
+              id="typeyourpassword"
+            />
+            <span onclick="handlePasswordOne()">
+              <svg
+                id="eyeon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-eye absolute top-3 right-3"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="grey"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                <path
+                  d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"
+                />
+              </svg>
+              <svg
+                id="eyeoff"
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-eye-off absolute top-3 right-3"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="grey"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                <path
+                  d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"
+                />
+                <path d="M3 3l18 18" />
+              </svg>
+            </span>
+            <span class="flex justify-end"
+              ><a href="#" class="text-sm text-right text-black opacity-50"
+                >Forget Password</a
+              ></span
+            >
+          </div>
+          <a
+            href="verify.html"
+            role="button"
+            class="relative w-full py-3 text-center overflow-hidden font-medium text-black bg-white border border-blue-100 rounded-lg shadow-inner group focus:bg-blue-500 focus:text-white my-7"
+          >
+            <span
+              class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-blue-500 transition-all duration-200 group-hover:w-full"
+            ></span>
+            <span
+              class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-blue-500 transition-all duration-200 group-hover:h-full"
+            ></span>
+            <span
+              class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-blue-500 transition-all duration-200 group-hover:w-full"
+            ></span>
+            <span
+              class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-blue-500 transition-all duration-200 group-hover:h-full"
+            ></span>
+            Login
+          </a>
+        </form>
+        <div class="flex items-center gap-3 mb-5 justify-center">
+          <input
+            id="default-checkbox"
+            type="checkbox"
+            value=""
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 outline-none"
+          />
+          <label for="default-checkbox" class="font-sm text-black opacity-50"
+            >Remember me for 30 days</label
+          >
+        </div>
+        <div class="flex items-center gap-1 justify-center">
+          <p class="text-base text-black opacity-50">Don't have an account?</p>
+          <a
+            href="signup.html"
+            class="rounded-xl text-[#5A8BF2] text-base font-bold"
+          >
+            Register
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function handlePasswordOne() {
+        let passwordInput = document.getElementById("typeyourpassword");
+        let eyeOn = document.getElementById("eyeon");
+        let eyeOff = document.getElementById("eyeoff");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          eyeOn.style.display = "block";
+          eyeOff.style.display = "none";
+        } else {
+          passwordInput.type = "password";
+          eyeOn.style.display = "none";
+          eyeOff.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

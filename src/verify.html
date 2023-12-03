@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/styles.css">
+    <link rel="stylesheet" href="signup.css" />
+    <title>Verify</title>
+  </head>
+  <body>
+    <section
+      class="min-h-screen flex items-center justify-center bg-[url('/images/Background.svg')]"
+    >
+      <!-- login container -->
+      <div
+        class="bg-white rounded-2xl px-12 pb-10 pt-7 max-w-full drop-shadow-2xl flex flex-col items-center justify-between"
+      >
+        <!-- form -->
+        <img src="../images/verify-icon.svg" />
+        <h2>Verify your email address</h2>
+        <p class="text-center text-xs">
+          To verify your email address enter the verification code here.
+        </p>
+        <div
+          id="otpNumberCounter"
+          class="flex flex-row justify-center text-center px-2 my-8"
+        >
+          <input
+            class="m-2 border h-16 w-14 text-center form-control rounded focus:border-blue-500"
+            type="text"
+            id="first"
+            maxlength="1"
+          />
+          <input
+            class="m-2 border h-16 w-14 text-center form-control rounded focus:ring-blue-500 focus:border-blue-500"
+            type="text"
+            id="second"
+            maxlength="1"
+          />
+          <input
+            class="m-2 border h-16 w-14 text-center form-control rounded"
+            type="text"
+            id="third"
+            maxlength="1"
+          />
+          <input
+            class="m-2 border h-16 w-14 text-center form-control rounded"
+            type="text"
+            id="fourth"
+            maxlength="1"
+          />
+        </div>
+        <a
+          href="http://127.0.0.1:5500/verify.html"
+          role="button"
+          class="relative mb-10 w-full py-3 text-center overflow-hidden font-medium text-black bg-white border border-blue-100 rounded-lg shadow-inner group focus:bg-blue-500 focus:text-white"
+        >
+          <span
+            class="ease absolute left-0 top-0 h-0 w-0 border-t-2 border-blue-500 transition-all duration-200 group-hover:w-full"
+          ></span>
+          <span
+            class="ease absolute right-0 top-0 h-0 w-0 border-r-2 border-blue-500 transition-all duration-200 group-hover:h-full"
+          ></span>
+          <span
+            class="ease absolute bottom-0 right-0 h-0 w-0 border-b-2 border-blue-500 transition-all duration-200 group-hover:w-full"
+          ></span>
+          <span
+            class="ease absolute bottom-0 left-0 h-0 w-0 border-l-2 border-blue-500 transition-all duration-200 group-hover:h-full"
+          ></span>
+          Verify Email
+        </a>
+        <div
+          class="text-xs flex items-center text-[#002D74] gap-1 justify-center"
+        >
+          <p class="text-base">Code didn't get?</p>
+          <button
+            class="font-bold rounded-xl duration-300 text-[#5A8BF2] text-base"
+          >
+            Resend
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        function handleOTPInput() {
+          const inputs = document.querySelectorAll("#otpNumberCounter > *[id]");
+
+          inputs.forEach((input, i) => {
+            input.addEventListener("keydown", (event) => {
+              const isBackspace = event.key === "Backspace";
+              const isLastInput = i === inputs.length - 1;
+
+              if (isBackspace) {
+                inputs[i].value = "";
+                if (i !== 0) inputs[i - 1]?.focus();
+              } else if (
+                !isLastInput &&
+                /[0-9]/.test(event.key) //Problem: User can't put there capital letter
+              ) {
+                inputs[i].value = isLastInput ? "" : event.key;
+                if (!isLastInput) inputs[i + 1].focus();
+                event.preventDefault();
+              }
+            });
+          });
+        }
+
+        handleOTPInput();
+      });
+    </script>
+  </body>
+</html>
